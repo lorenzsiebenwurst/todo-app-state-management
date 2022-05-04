@@ -1,9 +1,5 @@
 const state = {
-  todos: [
-    { description: "Learn HTML", done: true },
-    { description: "Learn CSS", done: false },
-    { description: "Learn JavaScript", done: false },
-  ],
+  todos: [],
 };
 
 const btn = document.querySelector("#add-todo");
@@ -51,9 +47,11 @@ function renderTodos() {
 
 renderTodos();
 
-/*const rmvBotton = document.querySelector("#removeDoneTodos");
+const rmvBotton = document.querySelector("#removeDoneTodos");
 rmvBotton.addEventListener("click", () => {
-  const doneObjects = state.todos.filter((todo) => todo.done === true);
-  console.log(doneObjects);
+  const notDoneObjects = state.todos.filter((todo) => todo.done === false);
 
-});*/
+  state.todos = notDoneObjects;
+
+  renderTodos();
+});
