@@ -1,5 +1,8 @@
 const state = {
-  todos: [],
+  todos: [
+    { description: "Drink Beer", done: false },
+    { description: "Have fun coding", done: false },
+  ],
 };
 
 const btn = document.querySelector("#add-todo");
@@ -40,8 +43,6 @@ function renderTodos() {
     todoLi.appendChild(todoText);
 
     list.appendChild(todoLi);
-
-    const inputs = document.querySelectorAll("input");
   });
 }
 
